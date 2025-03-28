@@ -20,8 +20,16 @@ public class ProductService
         _products = database.GetCollection<Product>("Products");
     }
 
-    public async Task<List<Product>> GetAllAsync() =>
-        await _products.Find(_ => true).ToListAsync();
+    public async Task<(List<Product> Items, long TotalCount)> GetPagedAsync(int page, int pageSize)
+    {
+        var totalCount = await _products.CountDocumentsAsync(_ => true);
+        var items = await _products.Find(_ => true)
+            .Skip((page - 1) * pageSize)
+            .Limit(pageSize)
+            .ToListAsync();
+
+        return (items, totalCount);
+    }
 
     public async Task<Product?> GetByIdAsync(string id) =>
         await _products.Find(p => p.Id == id).FirstOrDefaultAsync();

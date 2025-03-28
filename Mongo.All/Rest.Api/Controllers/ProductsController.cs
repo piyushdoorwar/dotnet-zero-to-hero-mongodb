@@ -13,11 +13,20 @@ public class ProductsController : ControllerBase
     public ProductsController(ProductService productService) => _productService = productService;
 
     // GET: api/products
-    [HttpGet]
-    public async Task<ActionResult<List<Product>>> GetAllProducts()
+    public async Task<IActionResult> GetAllProducts([FromQuery] int page = 1, [FromQuery] int pageSize = 10)
     {
-        var products = await _productService.GetAllAsync();
-        return Ok(products);
+        var (items, totalCount) = await _productService.GetPagedAsync(page, pageSize);
+
+        var response = new
+        {
+            Data = items,
+            Page = page,
+            PageSize = pageSize,
+            TotalItems = totalCount,
+            TotalPages = (int)Math.Ceiling((double)totalCount / pageSize)
+        };
+
+        return Ok(response);
     }
 
     // GET: api/products/{id}

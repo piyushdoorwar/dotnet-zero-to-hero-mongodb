@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rest.Api", "Rest.Api\Rest.A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mongo.Service", "Mongo.Service\Mongo.Service.csproj", "{58CEA769-DB26-40F7-B1EB-304EF868443E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphQl.Api", "GraphQl.Api\GraphQl.Api.csproj", "{1C260CDA-2DDF-4F76-91D5-D80F9ABC4832}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{58CEA769-DB26-40F7-B1EB-304EF868443E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58CEA769-DB26-40F7-B1EB-304EF868443E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58CEA769-DB26-40F7-B1EB-304EF868443E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C260CDA-2DDF-4F76-91D5-D80F9ABC4832}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C260CDA-2DDF-4F76-91D5-D80F9ABC4832}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C260CDA-2DDF-4F76-91D5-D80F9ABC4832}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C260CDA-2DDF-4F76-91D5-D80F9ABC4832}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
